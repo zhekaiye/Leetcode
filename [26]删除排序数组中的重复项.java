@@ -49,13 +49,12 @@ class Solution {
         if (nums.length <= 1) {
             return nums.length;
         }
-        int cur = 0, next = 1;
-        while (next < nums.length) {
-            if (nums[cur] != nums[next]) {
-                nums[cur + 1] = nums[next];
+        int cur = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[cur] != nums[i]) {
+                nums[cur + 1] = nums[i];
                 cur++;
             }
-            next++;
         }
         return cur + 1;
     }
